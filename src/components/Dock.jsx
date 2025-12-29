@@ -52,13 +52,17 @@ const Dock = () => {
 
         return () => {
             dock.removeEventListener("mousemove", handleMouseMove)
-            dock.removeEventListener("mousemove", resetIcons)
+            dock.removeEventListener("mouseleave", resetIcons)
         }
     }, [])
 
 
 
-    const toggleApp = (app) => {}
+    const toggleApp = ({ id, canOpen }) => {
+      if (!canOpen) return
+      console.log(id) // or actual logic
+}
+
 
   return (
     <section id='dock'>
